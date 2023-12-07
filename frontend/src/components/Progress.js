@@ -17,7 +17,7 @@ function ProgressBar() {
                 <nav className="breadcrumb">
                     <Link to="/">Home / </Link>
                     <Link to="/dashboard">Dashboard / </Link>
-                    <Link to="/lessons" className="breadcrumb-item active" aria-current="page">Progress</Link>
+                    <Link to="/progress" className="breadcrumb-item active" aria-current="page">Progress</Link>
                 </nav>
             </nav>
 
