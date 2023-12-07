@@ -47,7 +47,7 @@ const QuizForm = () => {
                 <nav className="breadcrumb">
                     <Link to="/">Home / </Link>
                     <Link to="/dashboard">Dashboard / </Link>
-                    <Link to="/lessons" className="breadcrumb-item active" aria-current="page">Lessons</Link>
+                    <Link to="/lessons" className="breadcrumb-item active" aria-current="page">Quizzes</Link>
                 </nav>
             </nav>
             <div className="container">

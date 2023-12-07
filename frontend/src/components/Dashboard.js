@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Dashboard.css';
 import DashboardPicture from './Dashboard_picture.png';
-import '/Users/nadiamas/WebstormProjects/sign-in-react-trial/src/App.js';
+import '/Users/nadiamas/PycharmProjects/LanguageApp_ITEC4012_Final/frontend/src/App.js';
 
 const Dashboard = () => {
     return (

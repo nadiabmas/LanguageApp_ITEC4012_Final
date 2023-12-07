@@ -1,44 +1,39 @@
-import React from 'react';
-import { ProgressBar } from 'react-bootstrap';
+import React, { useState } from 'react';
+import './Progress.css';
 import {Link} from "react-router-dom";
 
-class Progress extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            quizzesAnswered: 3,
-            lessonsTaken: 5,
-        };
-    }
+function ProgressBar() {
+    const [lessonsCompleted, setLessonsCompleted] = useState(4);
+    const [quizScore, setQuizScore] = useState(75);
 
-    render() {
-        const quizzesAnswered = 2;
-        const lessonsTaken = 3;
-        const totalQuizzes = 3;
-        const totalLessons = 5;
-        const quizzesProgress = (quizzesAnswered / totalQuizzes) * 100;
-        const lessonsProgress = (lessonsTaken / totalLessons) * 100;
-
-        return (
-            <div className="progress">
-                <h1 className="title-page">ANNEX
-                    <Link to="/">
-                        <button className="sign-out-button">Sign Out</button>
-                    </Link>
-                </h1>
-                <nav aria-label="breadcrumb">
-                    <nav className="breadcrumb">
-                        <Link to="/">Home / </Link>
-                        <Link to="/dashboard">Dashboard / </Link>
-                        <Link to="/progress" className="breadcrumb-item active" aria-current="page">Progress</Link>
-                    </nav>
+    return (
+        <div className="lesson">
+            <h1 className="title-page">ANNEX
+                <Link to="/">
+                    <button className="sign-out-button">Sign Out</button>
+                </Link>
+            </h1>
+            <nav aria-label="breadcrumb">
+                <nav className="breadcrumb">
+                    <Link to="/">Home / </Link>
+                    <Link to="/dashboard">Dashboard / </Link>
+                    <Link to="/lessons" className="breadcrumb-item active" aria-current="page">Progress</Link>
                 </nav>
-                <h2>Progress</h2>
-                <ProgressBar now={quizzesProgress} label={`${quizzesAnswered} / ${totalQuizzes} Quizzes Answered`} />
-                <ProgressBar now={lessonsProgress} label={`${lessonsTaken} / ${totalLessons} Lessons Taken`} />
+            </nav>
+
+            <div className="progress-container">
+                <h2>Course Progress:</h2>
+                <div className="progress-bar">
+                    <div
+                        className="progress-bar-fill"
+                        style={{ width: `${(lessonsCompleted / 10) * 100}%` }}
+                    ></div>
+                </div>
+                <p>Completed Lessons: {lessonsCompleted}</p>
+                <p>Quiz Score: {quizScore}</p>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-export default Progress;
+export default ProgressBar;
